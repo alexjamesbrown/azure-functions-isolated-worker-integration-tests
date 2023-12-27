@@ -56,7 +56,7 @@ internal sealed class WorkerHostFactoryLocator
                 }
             )!;
 
-    private void CreateHostBuilder(MethodBase factoryMethod)
+    private void CreateHostBuilder(MethodInfo factoryMethod)
     {
         HostBuilder = (IHostBuilder)
             factoryMethod.Invoke(null, new object?[] {  })!;

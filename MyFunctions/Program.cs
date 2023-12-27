@@ -1,17 +1,14 @@
 using Microsoft.Extensions.Hosting;
 
-var builder = MyFunctions.Program.CreateHostBuilder();
+var builder = CreateHostBuilder();
 var host = builder.Build();
 host.Run();
 
-namespace MyFunctions
+public sealed partial class Program
 {
-    public sealed partial class Program
+    public static IHostBuilder CreateHostBuilder()
     {
-        public static IHostBuilder CreateHostBuilder()
-        {
-            return new HostBuilder()
-                .ConfigureFunctionsWorkerDefaults();
-        }
+        return new HostBuilder()
+            .ConfigureFunctionsWorkerDefaults();
     }
 }
